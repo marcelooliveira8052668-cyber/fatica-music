@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="noite">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#16083e">
+  <meta name="description" content="Fatica Music: conheça as composições, ouça as músicas e acompanhe os próximos lançamentos da artista independente.">
+  <link rel="canonical" href="https://marcelooliveira8052668-cyber.github.io/fatica-music/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Fatica Music">
+  <meta property="og:title" content="Fatica Music — Composições que contam histórias">
+  <meta property="og:description" content="Ouça as composições e acompanhe a trajetória da artista independente.">
+  <!-- A prévia é geral: robôs de compartilhamento não executam JavaScript para ler ?musica=. -->
+  <meta property="og:url" content="https://marcelooliveira8052668-cyber.github.io/fatica-music/">
+  <meta property="og:image" content="https://marcelooliveira8052668-cyber.github.io/fatica-music/assets/imagens/retrato-por-do-sol.jpeg">
+  <meta property="og:image:alt" content="Retrato da artista ao pôr do sol">
+  <link rel="icon" href="assets/imagens/capa-placeholder.svg" type="image/svg+xml">
+  <script>
+    // Aplicar o tema salvo antes de desenhar a página, evitando um clarão na abertura.
+    try { if (localStorage.getItem('fatica:tema') === 'dia') document.documentElement.dataset.theme = 'dia' } catch (_) {}
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Fatica Music — Composições que contam histórias</title>
+  <script defer src="js/musicas.js"></script>
+  <script defer src="js/player.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="cabecalho" id="topo">
+    <a class="marca" href="#inicio" aria-label="Fatica Music — Início"><span class="marca-simbolo" aria-hidden="true">✳</span><span>FATICA<span class="marca-leve"> MUSIC</span></span></a>
+    <nav class="menu" id="menu" aria-label="Navegação principal">
+      <a href="#inicio">Início</a><a href="#musicas">Músicas</a><a href="#lancamentos">Lançamentos</a><a href="#sobre">Sobre</a><a href="#letras">Letras</a><a href="#galeria">Galeria</a><a href="#apoie">Apoie</a><a href="#encomendas">Encomendas</a><a href="#contato">Contato</a>
+    </nav>
+    <div class="cabecalho-acoes">
+      <button class="tema-botao" id="tema-botao" type="button" aria-label="Ativar modo dia" title="Ativar modo dia"><span id="tema-icone" aria-hidden="true">☀</span><span id="tema-texto">Dia</span></button>
+      <button class="menu-botao" id="menu-botao" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero secao" id="inicio" aria-labelledby="titulo-hero">
+      <div class="hero-conteudo">
+        <p class="sobretitulo"><span class="ponto"></span> Um espaço para a música autoral</p>
+        <h1 id="titulo-hero">Histórias que se tornam <em>canções.</em></h1>
+        <p class="hero-texto" id="hero-apresentacao">Conheça as composições, descubra novos sons e acompanhe os próximos passos da artista.</p>
+        <div class="hero-acoes"><a class="botao botao-primario" href="#musicas">Ouvir músicas <span aria-hidden="true">↗</span></a><a class="botao botao-contorno" href="#sobre">Conhecer a artista</a></div>
+        <p class="hero-nota">As faixas estão disponíveis para ouvir gratuitamente.</p>
+      </div>
+      <div class="hero-arte" aria-label="Arte abstrata decorativa da Fatica Music" role="img"><div class="orbita orbita-um"></div><div class="orbita orbita-dois"></div><div class="arte-centro"><span>F</span><small>FATICA MUSIC</small></div><span class="arte-estrela" aria-hidden="true">✳</span></div>
+    </section>
+
+    <section class="secao catalogo" id="musicas" aria-labelledby="titulo-musicas">
+      <div class="secao-topo"><div><p class="sobretitulo">01 / Ouça agora</p><h2 id="titulo-musicas">As composições</h2><p>Um catálogo em construção. Títulos e créditos provisórios estão identificados em cada faixa.</p></div><span class="contador" id="contador-musicas">07 faixas</span></div>
+      <div class="grade-musicas" id="grade-musicas"></div>
+    </section>
+
+    <section class="secao lancamentos" id="lancamentos" aria-labelledby="titulo-lancamentos"><div class="secao-topo"><div><p class="sobretitulo">02 / Em destaque</p><h2 id="titulo-lancamentos">Lançamentos</h2></div></div><div class="destaque-lancamento"><div class="destaque-arte" aria-hidden="true">✳</div><div><p class="sobretitulo">Novidades em breve</p><h3>O próximo capítulo está sendo escrito.</h3><p>Esta seção será atualizada quando a artista confirmar datas, capas e informações de lançamento. Enquanto isso, explore as gravações disponíveis.</p><a class="link-seta" href="#musicas">Explorar catálogo <span aria-hidden="true">↗</span></a></div></div></section>
+
+    <section class="secao sobre" id="sobre" aria-labelledby="titulo-sobre"><div class="sobre-marca" aria-hidden="true"><span>F</span><small>COMPOSIÇÕES / HISTÓRIAS / MÚSICA</small></div><div><p class="sobretitulo">03 / A compositora</p><h2 id="titulo-sobre">Por trás de cada <em>verso.</em></h2><p id="texto-biografia">Este espaço aguarda a biografia aprovada pela compositora. Sua história, suas influências e o que a inspira a escrever poderão ser apresentados aqui.</p><span class="selo-pendente">Biografia oficial pendente</span></div></section>
+
+    <section class="secao" id="letras" aria-labelledby="titulo-letras"><div class="secao-topo"><div><p class="sobretitulo">04 / Palavras que ficam</p><h2 id="titulo-letras">Letras</h2><p>Somente letras cuja divulgação tenha sido autorizada serão exibidas aqui.</p></div></div><div class="lista-letras" id="lista-letras"></div></section>
+
+    <section class="secao" id="galeria" aria-labelledby="titulo-galeria"><div class="secao-topo"><div><p class="sobretitulo">05 / Outros olhares</p><h2 id="titulo-galeria">Galeria de fotos</h2><p>Retratos da artista. Use as setas, deslize no celular ou toque em uma foto para ampliar.</p></div></div><div class="galeria-carrossel" id="galeria-carrossel" role="region" aria-roledescription="carrossel" aria-label="Fotos da artista"><div class="galeria-oficial" id="galeria-oficial"><div class="galeria-trilho" id="galeria-trilho"></div></div><div class="galeria-controles"><button id="carrossel-anterior" class="carrossel-seta" type="button" aria-label="Foto anterior">‹</button><div class="galeria-pontos" id="galeria-pontos" aria-label="Escolher foto"></div><button id="carrossel-proxima" class="carrossel-seta" type="button" aria-label="Próxima foto">›</button><button id="carrossel-pausar" class="carrossel-pausar" type="button" aria-label="Pausar carrossel" aria-pressed="false">Pausar</button></div><p id="galeria-status" class="sr-only" role="status" aria-live="polite"></p></div><div class="galeria-videos"><h3>Vídeos</h3><p>Vídeos oficiais poderão ser adicionados quando estiverem disponíveis.</p><div id="galeria-videos"></div></div><dialog class="foto-dialogo" id="foto-dialogo" aria-label="Foto ampliada"><button class="foto-fechar" id="foto-fechar" type="button" aria-label="Fechar foto">✕</button><button class="foto-navegar foto-anterior" id="foto-anterior" type="button" aria-label="Foto anterior">‹</button><figure><img id="foto-ampliada" alt=""><figcaption id="foto-legenda"></figcaption></figure><button class="foto-navegar foto-proxima" id="foto-proxima" type="button" aria-label="Próxima foto">›</button></dialog></section>
+
+    <section class="secao apoio" id="apoie" aria-labelledby="titulo-apoie"><div class="apoio-cabecalho"><p class="sobretitulo">06 / Faça parte dessa história</p><h2 id="titulo-apoie">Apoie minhas <em>composições.</em></h2><p>Ouvir é sempre gratuito. Se você quiser, poderá contribuir voluntariamente para apoiar novas criações. Nenhuma contribuição é necessária para acessar as músicas.</p></div><div class="apoio-conteudo"><div><span class="apoio-icone" aria-hidden="true">◇</span><h3>Contribuir via Pix</h3><p id="pix-aviso">A chave Pix ainda não foi cadastrada pela artista. Nenhum pagamento é realizado neste site.</p><div class="pix-acoes"><button class="botao botao-primario" id="pix-contribuir" type="button" disabled>Contribuir via Pix</button><button class="botao botao-contorno" id="pix-copiar" type="button" disabled>Copiar chave Pix</button><span id="pix-chave" class="pix-chave"></span></div></div><div class="qr-placeholder" id="qr-container"><span aria-hidden="true">▦</span><small>Espaço reservado para QR Code oficial</small></div></div></section>
+
+    <section class="secao encomendas" id="encomendas" aria-labelledby="titulo-encomendas"><div><p class="sobretitulo">07 / Sua história em música</p><h2 id="titulo-encomendas">Encomende uma <em>composição.</em></h2><p>Para aniversários, casamentos, declarações, homenagens, datas comemorativas, empresas ou eventos. Conte sua ideia e converse diretamente com a artista sobre possibilidades, prazo e valores.</p><p class="texto-discreto">O formulário prepara uma mensagem: não cria pedido, cobrança nem entrega automática.</p></div><form id="form-encomenda" class="form-encomenda"><label for="pedido-nome">Seu nome <span aria-hidden="true">*</span></label><input id="pedido-nome" name="nome" required maxlength="80" autocomplete="name" placeholder="Como podemos chamar você?"><label for="pedido-ocasiao">Ocasião <span aria-hidden="true">*</span></label><select id="pedido-ocasiao" name="ocasiao" required><option value="">Selecione</option><option>Aniversário</option><option>Casamento</option><option>Declaração ou homenagem</option><option>Data comemorativa</option><option>Empresa ou evento</option><option>Outro</option></select><label for="pedido-estilo">Estilo musical desejado <span aria-hidden="true">*</span></label><input id="pedido-estilo" name="estilo" required maxlength="80" placeholder="Ex.: romântico, sertanejo, pop"><label for="pedido-descricao">Conte sua ideia <span aria-hidden="true">*</span></label><textarea id="pedido-descricao" name="descricao" required maxlength="1200" rows="4" placeholder="Para quem é a música? O que você gostaria de contar?"></textarea><button class="botao botao-primario" type="submit">Preparar pedido no WhatsApp <span aria-hidden="true">↗</span></button><p class="form-aviso" id="form-aviso" role="status">O envio pelo WhatsApp será habilitado quando o número oficial for cadastrado.</p><button class="botao-texto" type="button" id="copiar-pedido">Copiar mensagem do pedido</button></form></section>
+
+    <section class="secao licenciamento" id="licenciamento"><p class="sobretitulo">08 / Parcerias</p><h2>Quer utilizar uma <em>composição?</em></h2><p>Para vídeos, projetos, eventos ou outras utilizações, entre em contato para consultar disponibilidade, solicitar autorização e negociar condições. Nenhuma licença é concedida automaticamente por este site.</p><a class="botao botao-contorno" id="link-licenciamento" href="#contato">Solicitar informações <span aria-hidden="true">↗</span></a></section>
+
+    <section class="secao contato" id="contato"><div><p class="sobretitulo">09 / Vamos conversar</p><h2>A música também é <em>encontro.</em></h2><p>Perfis e canais oficiais serão exibidos aqui após a confirmação da artista.</p></div><div class="contato-links" id="contato-links"><p class="texto-discreto">Instagram, YouTube e WhatsApp oficiais ainda não cadastrados.</p></div></section>
+  </main>
+
+  <footer class="rodape"><a class="marca" href="#inicio"><span class="marca-simbolo" aria-hidden="true">✳</span><span>FATICA<span class="marca-leve"> MUSIC</span></span></a><small>© <span id="ano"></span> Fatica Music · Ouça, descubra, compartilhe.</small><a href="#topo">Voltar ao topo ↑</a></footer>
+
+  <aside class="player" id="player" aria-label="Reprodutor de música"><div class="player-faixa"><img id="player-capa" src="assets/imagens/capa-placeholder.svg" alt="Capa provisória"><div class="player-info"><strong id="player-titulo">Escolha uma música</strong><small id="player-artista">Fatica Music</small></div></div><div class="player-centro"><div class="player-botoes"><button id="botao-aleatorio" type="button" aria-label="Ativar modo aleatório" aria-pressed="false" title="Aleatório">⇄</button><button id="botao-anterior" type="button" aria-label="Música anterior" title="Anterior">⏮</button><button class="player-play" id="botao-play" type="button" aria-label="Reproduzir" title="Reproduzir">▶</button><button id="botao-proximo" type="button" aria-label="Próxima música" title="Próxima">⏭</button><button id="botao-repetir" type="button" aria-label="Ativar repetição" aria-pressed="false" title="Repetir">↻</button></div><div class="player-progresso"><span id="tempo-atual">0:00</span><input type="range" id="progresso" min="0" max="1000" value="0" aria-label="Posição da música"><span id="tempo-total">0:00</span></div></div><div class="player-extras"><button id="botao-fila" type="button" aria-label="Mostrar lista de reprodução" aria-expanded="false" aria-controls="fila-musicas" title="Lista de reprodução">☷</button><label class="volume-label" for="volume">Volume</label><input type="range" id="volume" min="0" max="100" value="80" aria-label="Volume"></div><div class="player-fila" id="fila-musicas" hidden><div class="fila-topo"><strong>Lista de reprodução</strong><button id="fechar-fila" type="button" aria-label="Fechar lista">✕</button></div><ol id="fila-lista"></ol></div><audio id="audio" preload="metadata"></audio></aside>
+  <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+</body>
+</html>

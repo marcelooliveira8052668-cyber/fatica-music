@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="titulo descricao">
+  <title id="titulo">Sete Estrelas — arte ilustrativa</title>
+  <desc id="descricao">Céu violeta com sete estrelas; imagem provisória, não é uma capa oficial.</desc>
+  <defs>
+    <radialGradient id="ceu"><stop stop-color="#6635b1"/><stop offset=".55" stop-color="#291059"/><stop offset="1" stop-color="#10072d"/></radialGradient>
+    <radialGradient id="brilho"><stop stop-color="#fff"/><stop offset=".13" stop-color="#f2c9ff"/><stop offset="1" stop-color="#b76cff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#ceu)"/>
+  <g fill="url(#brilho)">
+    <circle cx="155" cy="207" r="57"/><circle cx="344" cy="130" r="52"/>
+    <circle cx="586" cy="205" r="62"/><circle cx="667" cy="414" r="54"/>
+    <circle cx="505" cy="497" r="59"/><circle cx="221" cy="460" r="53"/>
+    <circle cx="378" cy="335" r="65"/>
+  </g>
+  <g fill="#fff">
+    <circle cx="155" cy="207" r="5"/><circle cx="344" cy="130" r="5"/>
+    <circle cx="586" cy="205" r="6"/><circle cx="667" cy="414" r="5"/>
+    <circle cx="505" cy="497" r="6"/><circle cx="221" cy="460" r="5"/>
+    <circle cx="378" cy="335" r="7"/>
+  </g>
+  <path d="M155 207 344 130 586 205 667 414 505 497 378 335 221 460" fill="none" stroke="#e5b5ff" stroke-opacity=".35" stroke-width="2"/>
+  <text x="400" y="676" fill="#fff" text-anchor="middle" font-family="Georgia,serif" font-size="69">Sete Estrelas</text>
+  <text x="400" y="722" fill="#e4c7ff" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" letter-spacing="6">ARTE PROVISÓRIA</text>
+</svg>
