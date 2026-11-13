@@ -1,6 +1,6 @@
 # Fatica Music — site estático
 
-Site independente feito apenas com HTML5, CSS3 e JavaScript puro. Não usa React, npm, banco de dados, login nem serviço de pagamentos. Os áudios em `assets/audio/` são cópias de trabalho; os originais `.mpeg` da pasta acima permanecem intactos. Hospedagem planejada: [GitHub Pages da Fatica Music](https://marcelooliveira8052668-cyber.github.io/fatica-music/), em repositório próprio e separado de outros sites.
+Site independente feito apenas com HTML5, CSS3 e JavaScript puro. Não usa React, npm, banco de dados, login nem serviço de pagamentos. Os áudios em `assets/audio/` são cópias de trabalho; os originais `.mpeg` da pasta acima permanecem intactos. Publicado no [GitHub Pages da Fatica Music](https://marcelooliveira8052668-cyber.github.io/fatica-music/), em repositório próprio e separado de outros sites.
 
 O botão **Dia/Noite** alterna entre a paleta violeta noturna (texto branco) e uma versão clara com texto escuro legível. A escolha é salva no navegador quando o armazenamento local estiver disponível.
 
