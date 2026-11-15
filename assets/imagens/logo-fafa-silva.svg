@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="titulo-logo">
+  <title id="titulo-logo">Símbolo musical Fafa Silva: letra F, cantora e microfone</title>
+  <defs>
+    <linearGradient id="lilas" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff5ff"/>
+      <stop offset=".45" stop-color="#d3a0ff"/>
+      <stop offset="1" stop-color="#8657f3"/>
+    </linearGradient>
+    <linearGradient id="cabelo" x1=".05" y1="0" x2=".95" y2="1">
+      <stop offset="0" stop-color="#b76eff"/>
+      <stop offset="1" stop-color="#6231b2"/>
+    </linearGradient>
+    <filter id="brilho" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="2.2"/>
+    </filter>
+  </defs>
+  <!-- Halo fino e brilho de palco; fundo transparente -->
+  <path d="M17 87C3 54 25 17 58 13c19-2 34 5 44 17" stroke="#ad6eff" stroke-opacity=".28" stroke-width="6" fill="none" filter="url(#brilho)"/>
+  <path d="M17 87C3 54 25 17 58 13c19-2 34 5 44 17" stroke="url(#lilas)" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <!-- Silhueta com cabelos fluidos que encontram a letra F -->
+  <path d="M42 30c-19 7-25 27-19 44 2 6 2 13-5 23 17-4 27-12 29-24 4 9 0 19-8 29 16-7 27-21 23-36 9 10 3 24-4 31 24-9 29-29 17-49C67 33 54 27 42 30Z" fill="url(#cabelo)" opacity=".91"/>
+  <path d="M50 34c10-6 21 1 23 10 2 8-3 17-8 21-3 2-4 6-8 7-5-3-9-8-11-13-5-1-7-4-6-8 2-5 5-9 10-17Z" fill="url(#lilas)"/>
+  <path d="M70 49c4 2 8 5 10 6-4 2-7 2-11 2" fill="url(#lilas)"/>
+  <path d="M52 50l7-1" stroke="#5b238d" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M64 60l6-1" stroke="#6a299f" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Assinatura cursiva do F, ligada ao movimento do cabelo -->
+  <path d="M57 42c-2 18-8 39-19 55-6 9-14 14-22 11-6-2-5-10 0-14 5-4 11-5 17-4M45 62c10-3 19-4 30-2M51 43c9-4 16-5 26-4" fill="none" stroke="url(#lilas)" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Microfone retrô -->
+  <g transform="translate(89 35) rotate(14)">
+    <rect x="-10" y="-8" width="20" height="27" rx="10" fill="url(#lilas)" stroke="#eadaff" stroke-width="1"/>
+    <path d="M-6-1H6M-7 5H7M-6 11H6" stroke="#4d218c" stroke-width="1.5" opacity=".75"/>
+    <path d="M-14 4c0 13 5 19 14 19S14 17 14 4M0 23v12M-9 35H9" stroke="#cda0ff" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Estrela delicada -->
+  <path d="M103 11l2.4 8.6L114 22l-8.6 2.4L103 33l-2.4-8.6L92 22l8.6-2.4Z" fill="#f9dcff"/>
+  <circle cx="28" cy="27" r="1.7" fill="#d9baff"/>
+</svg>
