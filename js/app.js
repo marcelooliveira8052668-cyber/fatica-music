@@ -72,13 +72,13 @@
     play.addEventListener('click', () => player.selecionar(indice, true))
     capa.append(imagem, play)
     const corpo = elemento('div', 'card-corpo')
-    corpo.append(elemento('span', 'card-numero', `FAIXA ${String(indice + 1).padStart(2, '0')}`))
+    corpo.append(elemento('span', 'card-numero', `MÚSICA ${String(indice + 1).padStart(2, '0')}`))
     corpo.append(elemento('h3', null, musica.titulo))
-    corpo.append(elemento('p', 'card-credito', musica.credito))
-    if (musica.tituloPendente) corpo.append(elemento('span', 'card-pendente', 'Título/créditos a confirmar'))
-    if (musica.nota) corpo.append(elemento('p', 'card-nota', musica.nota))
+    if (musica.credito && !/^Artista e créditos a confirmar/i.test(musica.credito)) corpo.append(elemento('p', 'card-credito', musica.credito))
+    if (musica.tituloPendente) corpo.append(elemento('span', 'card-pendente', 'Nome da música ainda não confirmado'))
+    // Observações sobre os arquivos ficam apenas nos dados internos, não no cartão público.
     const acoes = elemento('div', 'card-acoes')
-    const compartilhar = elemento('a', 'acao-link', 'WhatsApp ↗')
+    const compartilhar = elemento('a', 'acao-link', 'Compartilhar ↗')
     compartilhar.href = linkWhatsapp(`Ouça "${musica.titulo}" na Fafa Silva - Music: ${enderecoMusica(musica)}`)
     compartilhar.target = '_blank'; compartilhar.rel = 'noopener noreferrer'
     compartilhar.setAttribute('aria-label', `Compartilhar ${musica.titulo} pelo WhatsApp`)
@@ -91,7 +91,7 @@
     return card
   }
 
-  $('contador-musicas').textContent = `${String(musicas.length).padStart(2, '0')} faixas`
+  $('contador-musicas').textContent = `${musicas.length} ${musicas.length === 1 ? 'música' : 'músicas'}`
   musicas.forEach((musica, indice) => $('grade-musicas').append(criarCard(musica, indice)))
 
   musicas.forEach((musica) => {
@@ -99,7 +99,7 @@
     const resumo = elemento('summary', null, musica.titulo)
     const conteudo = elemento('div', 'letra-conteudo')
     if (musica.letra?.trim()) conteudo.append(elemento('p', 'letra-texto', musica.letra))
-    else conteudo.append(elemento('p', null, 'Letra não publicada: aguardando autorização e texto oficial da compositora.'))
+    else conteudo.append(elemento('p', null, 'A letra desta música ainda não está disponível aqui.'))
     caixa.append(resumo, conteudo); $('lista-letras').append(caixa)
   })
 
@@ -112,18 +112,22 @@
 
   // Nunca mostrar Pix nem QR Code sem os dados oficiais completos.
   if (artista.pix?.trim()) {
-    $('pix-aviso').textContent = 'Contribuição voluntária. Antes de confirmar, confira o recebedor no aplicativo do seu banco.'
+    $('pix-aviso').textContent = 'O apoio por Pix é opcional. Confira o nome de quem vai receber antes de pagar.'
     $('pix-chave').textContent = artista.pix
     $('pix-copiar').disabled = false
-    $('pix-copiar').addEventListener('click', async () => avisar(await copiar(artista.pix) ? 'Chave Pix copiada. Confira o recebedor no seu banco.' : 'Não foi possível copiar. Selecione a chave exibida e copie manualmente.'))
+    $('pix-copiar').addEventListener('click', async () => avisar(await copiar(artista.pix) ? 'Chave Pix copiada. Confira o nome de quem vai receber.' : 'Não foi possível copiar. Selecione a chave exibida e copie manualmente.'))
     $('pix-contribuir').disabled = false
-    $('pix-contribuir').addEventListener('click', async () => avisar(await copiar(artista.pix) ? 'Chave Pix copiada. Abra seu banco e confira o recebedor antes de contribuir.' : 'Selecione a chave Pix exibida e copie manualmente para o aplicativo do seu banco.'))
+    $('pix-contribuir').addEventListener('click', async () => avisar(await copiar(artista.pix) ? 'Chave Pix copiada. Confira o nome de quem vai receber antes de pagar.' : 'Selecione a chave Pix exibida e copie manualmente para o aplicativo do seu banco.'))
     // O QR Code é uma imagem fornecida pela artista; o site não gera cobrança.
     if (/^(assets\/imagens\/[\w./-]+|https:\/\/[^\s]+)$/i.test(artista.qrCode || '')) {
       const img = elemento('img'); img.src = artista.qrCode; img.alt = 'QR Code Pix fornecido pela artista'
       img.addEventListener('error', () => { img.remove(); avisar('Imagem do QR Code indisponível.') })
       $('qr-container').replaceChildren(img)
     }
+  } else {
+    // Sem Pix autorizado, não exibir botões desativados nem QR Code vazio.
+    document.querySelector('.pix-acoes').hidden = true
+    $('qr-container').hidden = true
   }
 
   // Canais vazios não se transformam em links fictícios.
@@ -142,8 +146,8 @@
   const emailValido = artista.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(artista.email)
   if (emailValido) adicionarCanal('E-mail', `mailto:${encodeURIComponent(artista.email).replace('%40', '@')}`)
   if (telefone) {
-    $('form-aviso').textContent = 'Ao enviar, o WhatsApp abrirá com a mensagem pronta. Você deverá confirmar o envio no aplicativo.'
-    $('link-licenciamento').href = linkWhatsapp('Olá! Gostaria de consultar a possibilidade de utilizar uma composição e negociar uma licença.', telefone)
+    $('form-aviso').textContent = 'O WhatsApp abrirá com sua mensagem pronta. Confira e toque em enviar.'
+    $('link-licenciamento').href = linkWhatsapp('Olá! Gostaria de pedir autorização para usar uma música da Fafa.', telefone)
     $('link-licenciamento').target = '_blank'; $('link-licenciamento').rel = 'noopener noreferrer'
   } else if (emailValido) {
     $('link-licenciamento').href = `mailto:${artista.email}?subject=${encodeURIComponent('Consulta sobre licenciamento musical')}`
@@ -250,7 +254,7 @@
   $('carrossel-proxima').addEventListener('click', () => mostrarSlide(slideAtual + 1))
   const botaoPausar = $('carrossel-pausar')
   function atualizarPausa() {
-    botaoPausar.textContent = pausado ? 'Reproduzir' : 'Pausar'
+    botaoPausar.textContent = pausado ? 'Continuar fotos' : 'Pausar fotos'
     botaoPausar.setAttribute('aria-label', pausado ? 'Retomar carrossel' : 'Pausar carrossel')
     botaoPausar.setAttribute('aria-pressed', String(pausado))
   }
@@ -297,10 +301,20 @@
     const form = $('form-encomenda')
     return `Olá! Gostaria de conversar sobre uma composição personalizada.\n\nNome: ${form.elements.namedItem('nome').value.trim()}\nOcasião: ${form.elements.namedItem('ocasiao').value}\nEstilo desejado: ${form.elements.namedItem('estilo').value.trim()}\nDescrição: ${form.elements.namedItem('descricao').value.trim()}\n\nGostaria de saber sobre disponibilidade, prazo e valores.`
   }
-  $('form-encomenda').addEventListener('submit', (evento) => {
+  if (!telefone) {
+    // A mensagem pode ser copiada mesmo quando o WhatsApp oficial não foi cadastrado.
+    $('form-encomenda').querySelector('button[type="submit"]').textContent = 'Copiar mensagem'
+    $('copiar-pedido').hidden = true
+  }
+  $('form-encomenda').addEventListener('submit', async (evento) => {
     evento.preventDefault()
     if (!evento.currentTarget.reportValidity()) return
-    if (!telefone) { avisar('WhatsApp oficial ainda não cadastrado. Use “Copiar mensagem do pedido” e envie pelo contato oficial quando disponível.'); return }
+    if (!telefone) {
+      avisar(await copiar(mensagemPedido())
+        ? 'Mensagem copiada! Os contatos da Fafa serão divulgados aqui quando disponíveis.'
+        : 'Não foi possível copiar. Selecione e copie sua mensagem manualmente.')
+      return
+    }
     const destino = linkWhatsapp(mensagemPedido(), telefone)
     const janela = window.open(destino, '_blank', 'noopener,noreferrer')
     if (!janela) { avisar('O navegador bloqueou a nova aba. Use o botão de copiar e envie pelo WhatsApp.'); }
