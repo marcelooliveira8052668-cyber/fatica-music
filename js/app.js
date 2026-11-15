@@ -94,12 +94,14 @@
   $('contador-musicas').textContent = `${musicas.length} ${musicas.length === 1 ? 'música' : 'músicas'}`
   musicas.forEach((musica, indice) => $('grade-musicas').append(criarCard(musica, indice)))
 
-  musicas.forEach((musica) => {
+  // Mostrar apenas letras autorizadas, evitando vários avisos repetidos para os visitantes.
+  const musicasComLetra = musicas.filter((musica) => musica.letra?.trim())
+  if (!musicasComLetra.length) $('lista-letras').append(elemento('p', 'letras-aviso', 'As letras ainda não estão disponíveis.'))
+  musicasComLetra.forEach((musica) => {
     const caixa = elemento('details', 'letra-item')
     const resumo = elemento('summary', null, musica.titulo)
     const conteudo = elemento('div', 'letra-conteudo')
-    if (musica.letra?.trim()) conteudo.append(elemento('p', 'letra-texto', musica.letra))
-    else conteudo.append(elemento('p', null, 'A letra desta música ainda não está disponível aqui.'))
+    conteudo.append(elemento('p', 'letra-texto', musica.letra))
     caixa.append(resumo, conteudo); $('lista-letras').append(caixa)
   })
 
