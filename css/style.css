@@ -188,3 +188,6 @@ body{font-size:18px}
   .cabecalho .marca-nome strong {font-size:11.5px}
   .cabecalho .marca-nome .marca-leve {font-size:9.5px}
 }
+
+/* Elementos sem contato ou Pix configurado ficam ocultos até ativação. */
+.pix-acoes[hidden],.qr-placeholder[hidden],.botao-texto[hidden]{display:none!important}
