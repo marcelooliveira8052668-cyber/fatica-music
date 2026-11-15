@@ -2,7 +2,7 @@
 window.FATICA_DADOS = {
   artista: {
     nome: 'Fafa Silva - Music', // Nome de exibição solicitado pela família; confirmar com a artista.
-    apresentacao: 'Conheça as composições, descubra novos sons e acompanhe os próximos passos da artista.',
+    apresentacao: 'Ouça as músicas da Fafa, veja suas fotos e acompanhe as novidades.',
     biografia: '', // Preencher apenas com texto aprovado pela artista.
     instagram: '', // Ex.: https://www.instagram.com/perfil-oficial/
     youtube: '', // Ex.: https://www.youtube.com/@canal-oficial
@@ -25,9 +25,9 @@ window.FATICA_DADOS = {
     { id: 'coracao-no-volante', titulo: 'Coração no Volante', credito: 'Artista e créditos a confirmar', arquivo: 'assets/audio/coracao-no-volante.mp3', capa: 'assets/imagens/retrato-artista.jpeg', imagemProvisoria: true, letra: '', tituloPendente: true, nota: 'Nome do arquivo; metadados dizem “sertanejo 1”. Confirmar título oficial e autoria.' },
     { id: 'so-o-teu-amor-importa-depois', titulo: 'Só o teu amor importa', credito: 'Artista e créditos a confirmar', arquivo: 'assets/audio/so-o-teu-amor-importa-depois.mp3', capa: 'assets/imagens/arte-so-teu-amor.jpeg', imagemProvisoria: true, letra: '', tituloPendente: false, nota: 'Título corrigido pela família; confirmar créditos e se a arte “Só teu amor me importa” corresponde à gravação.' },
     { id: 'amor-escondido', titulo: 'Amor Escondido', credito: 'Artista e créditos a confirmar', arquivo: 'assets/audio/amor-escondido.mp3', capa: 'assets/imagens/retrato-lilas-chapeu.jpeg', imagemProvisoria: true, letra: '', tituloPendente: true, nota: 'Título dos metadados; confirmar créditos. Retrato extraído de uma imagem com o mesmo título.' },
-    { id: 'faixa-sem-titulo', titulo: 'Faixa sem título confirmado', credito: 'Artista e créditos a confirmar', arquivo: 'assets/audio/faixa-sem-titulo.mp3', capa: 'assets/imagens/retrato-chapeu.jpeg', imagemProvisoria: true, letra: '', tituloPendente: true, nota: 'Arquivo das 14.58.01: sem metadados. Foto ilustrativa, título a confirmar.' },
+    { id: 'faixa-sem-titulo', titulo: 'Música 4 — nome a confirmar', credito: 'Artista e créditos a confirmar', arquivo: 'assets/audio/faixa-sem-titulo.mp3', capa: 'assets/imagens/retrato-chapeu.jpeg', imagemProvisoria: true, letra: '', tituloPendente: true, nota: 'Arquivo das 14.58.01: sem metadados. Foto ilustrativa, título a confirmar.' },
     { id: 'apenas-army', titulo: 'Apenas Army', credito: 'Artista e créditos a confirmar', arquivo: 'assets/audio/apenas-army.mp3', capa: 'assets/imagens/retrato-por-do-sol.jpeg', imagemProvisoria: true, letra: '', tituloPendente: true, nota: 'Título dos metadados; confirmar grafia, autoria e créditos. Foto ilustrativa.' },
-    { id: 'faixa-06-sem-titulo', titulo: 'Faixa 06 — título a confirmar', credito: 'Artista e créditos a confirmar', arquivo: 'assets/audio/faixa-06-sem-titulo.mp3', capa: 'assets/imagens/retrato-faixa-06.jpeg', imagemProvisoria: true, letra: '', tituloPendente: true, nota: 'Gravação das 14.50.24 sem metadados. Foto ilustrativa; identificar título e autoria posteriormente.' },
+    { id: 'faixa-06-sem-titulo', titulo: 'Música 6 — nome a confirmar', credito: 'Artista e créditos a confirmar', arquivo: 'assets/audio/faixa-06-sem-titulo.mp3', capa: 'assets/imagens/retrato-faixa-06.jpeg', imagemProvisoria: true, letra: '', tituloPendente: true, nota: 'Gravação das 14.50.24 sem metadados. Foto ilustrativa; identificar título e autoria posteriormente.' },
     { id: 'sete-estrelas', titulo: 'Sete Estrelas', credito: 'Artista e créditos a confirmar', arquivo: 'assets/audio/sete-estrelas.mp3', capa: 'assets/imagens/arte-provisoria-sete-estrelas.svg', imagemProvisoria: true, letra: '', tituloPendente: false, nota: 'Nome informado pela família para o arquivo das 17.50.10. Confirmar créditos e capa oficial.' }
   ]
 }
