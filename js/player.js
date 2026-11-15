@@ -14,7 +14,7 @@ window.FATICA_PLAYER = function criarPlayer(musicas, avisar, aoSelecionar) {
   function atualizarInterface() {
     const musica = musicas[indice]
     $('player-titulo').textContent = musica?.titulo || 'Escolha uma música'
-    $('player-artista').textContent = musica?.credito || 'Fafa Silva - Music'
+    $('player-artista').textContent = musica?.credito && !/^Artista e créditos a confirmar/i.test(musica.credito) ? musica.credito : 'Fafa Silva - Music'
     $('player-capa').src = musica?.capa || capaPadrao
     $('player-capa').alt = musica?.capa ? `${musica.imagemProvisoria ? 'Imagem ilustrativa' : 'Capa'} de ${musica.titulo}` : 'Capa provisória'
     botoes.play.textContent = !audio.paused && musica ? '❚❚' : '▶'
@@ -37,7 +37,7 @@ window.FATICA_PLAYER = function criarPlayer(musicas, avisar, aoSelecionar) {
   function falhaReproducao(erro) {
     aguardandoReproducao = false
     if (erro?.name === 'AbortError') return
-    avisar(erro?.name === 'NotAllowedError' ? 'Toque em reproduzir para iniciar o áudio neste dispositivo.' : 'Não foi possível reproduzir esta faixa. Verifique o arquivo e tente novamente.')
+    avisar(erro?.name === 'NotAllowedError' ? 'Toque em reproduzir para iniciar o áudio neste dispositivo.' : 'Não foi possível tocar esta música. Tente novamente.')
     atualizarInterface()
   }
 
@@ -107,7 +107,7 @@ window.FATICA_PLAYER = function criarPlayer(musicas, avisar, aoSelecionar) {
   audio.addEventListener('play', () => { aguardandoReproducao = false; atualizarInterface() })
   audio.addEventListener('pause', atualizarInterface)
   audio.addEventListener('ended', () => proxima(true))
-  audio.addEventListener('error', () => { if (indice >= 0 && !aguardandoReproducao) avisar('Áudio indisponível. Confira se o arquivo existe em assets/audio/.'); atualizarInterface() })
+  audio.addEventListener('error', () => { if (indice >= 0 && !aguardandoReproducao) avisar('Esta música não está disponível agora. Tente novamente mais tarde.'); atualizarInterface() })
 
   const fila = $('fila-musicas')
   function alternarFila(forcar) { fila.hidden = typeof forcar === 'boolean' ? !forcar : !fila.hidden; botoes.fila.setAttribute('aria-expanded', String(!fila.hidden)) }
