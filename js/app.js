@@ -51,7 +51,7 @@
 
   function selecionarNaUrl(musica) {
     try { history.replaceState(null, '', enderecoMusica(musica)) } catch { /* Alguns navegadores limitam history em file://. */ }
-    document.title = `${musica.titulo} — Fatica Music`
+    document.title = `${musica.titulo} — Fafa Silva - Music`
   }
 
   const player = window.FATICA_PLAYER(musicas, avisar, selecionarNaUrl)
@@ -79,7 +79,7 @@
     if (musica.nota) corpo.append(elemento('p', 'card-nota', musica.nota))
     const acoes = elemento('div', 'card-acoes')
     const compartilhar = elemento('a', 'acao-link', 'WhatsApp ↗')
-    compartilhar.href = linkWhatsapp(`Ouça "${musica.titulo}" na Fatica Music: ${enderecoMusica(musica)}`)
+    compartilhar.href = linkWhatsapp(`Ouça "${musica.titulo}" na Fafa Silva - Music: ${enderecoMusica(musica)}`)
     compartilhar.target = '_blank'; compartilhar.rel = 'noopener noreferrer'
     compartilhar.setAttribute('aria-label', `Compartilhar ${musica.titulo} pelo WhatsApp`)
     const botaoCopiar = elemento('button', 'acao-link', 'Copiar link')
@@ -138,7 +138,7 @@
   }
   adicionarCanal('Instagram', seguraHttps(artista.instagram))
   adicionarCanal('YouTube', seguraHttps(artista.youtube))
-  if (telefone) adicionarCanal('WhatsApp', linkWhatsapp('Olá! Conheci suas composições pelo site Fatica Music.', telefone))
+  if (telefone) adicionarCanal('WhatsApp', linkWhatsapp('Olá! Conheci suas composições pelo site Fafa Silva - Music.', telefone))
   const emailValido = artista.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(artista.email)
   if (emailValido) adicionarCanal('E-mail', `mailto:${encodeURIComponent(artista.email).replace('%40', '@')}`)
   if (telefone) {
