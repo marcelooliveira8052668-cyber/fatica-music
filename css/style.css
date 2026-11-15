@@ -161,3 +161,30 @@ body{font-size:18px}
 @media(max-width:540px){.galeria-foto{aspect-ratio:1}.galeria-controles{gap:10px}.galeria-legenda{font-size:16px}}
 @media(prefers-reduced-motion:reduce){.galeria-trilho{transition:none}}
 .card-capa img{filter:none}
+
+/* Identidade visual: Fafa Silva - Music, sem alterar os demais componentes. */
+.cabecalho .marca, .rodape .marca {gap:10px;letter-spacing:.05em}
+.marca-logotipo {display:block;flex:0 0 auto;width:61px;height:61px;object-fit:contain;filter:drop-shadow(0 0 9px #a455ff55)}
+.marca-nome {display:inline-flex;align-items:baseline;gap:.48em;white-space:nowrap;line-height:1.2}
+.marca-nome strong {font-weight:800;color:var(--texto);letter-spacing:.10em}
+.marca-nome .marca-leve {font-weight:400;font-size:.87em;letter-spacing:.16em;color:#e2bbff}
+[data-theme="dia"] .marca-nome .marca-leve {color:#5c248a}
+.rodape .marca {font-size:14px}
+.rodape .marca-logotipo {width:48px;height:48px}
+@media(max-width:800px){
+  .cabecalho .marca-nome {flex-direction:column;align-items:flex-start;gap:2px}
+  .cabecalho .marca-nome .marca-leve {font-size:.68em;letter-spacing:.18em}
+}
+@media(max-width:480px){
+  .cabecalho .marca {gap:6px}
+  .cabecalho .marca-logotipo {width:44px;height:44px}
+  .cabecalho .marca-nome strong {font-size:13px;letter-spacing:.05em}
+  .cabecalho .marca-nome .marca-leve {font-size:10px;letter-spacing:.16em}
+  .rodape .marca-logotipo {width:42px;height:42px}
+}
+@media(max-width:360px){
+  .cabecalho .marca {gap:4px}
+  .cabecalho .marca-logotipo {width:38px;height:38px}
+  .cabecalho .marca-nome strong {font-size:11.5px}
+  .cabecalho .marca-nome .marca-leve {font-size:9.5px}
+}
