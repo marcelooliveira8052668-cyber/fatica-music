@@ -14,7 +14,7 @@ window.FATICA_PLAYER = function criarPlayer(musicas, avisar, aoSelecionar) {
   function atualizarInterface() {
     const musica = musicas[indice]
     $('player-titulo').textContent = musica?.titulo || 'Escolha uma música'
-    $('player-artista').textContent = musica?.credito || 'Fatica Music'
+    $('player-artista').textContent = musica?.credito || 'Fafa Silva - Music'
     $('player-capa').src = musica?.capa || capaPadrao
     $('player-capa').alt = musica?.capa ? `${musica.imagemProvisoria ? 'Imagem ilustrativa' : 'Capa'} de ${musica.titulo}` : 'Capa provisória'
     botoes.play.textContent = !audio.paused && musica ? '❚❚' : '▶'
