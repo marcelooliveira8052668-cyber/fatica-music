@@ -1,7 +1,7 @@
 /* Conteúdo editável localmente. Não inserir dados pessoais sem autorização. */
 window.FATICA_DADOS = {
   artista: {
-    nome: 'Fatica Music', // Nome artístico definitivo: confirmar com a compositora.
+    nome: 'Fafa Silva - Music', // Nome de exibição solicitado pela família; confirmar com a artista.
     apresentacao: 'Conheça as composições, descubra novos sons e acompanhe os próximos passos da artista.',
     biografia: '', // Preencher apenas com texto aprovado pela artista.
     instagram: '', // Ex.: https://www.instagram.com/perfil-oficial/
