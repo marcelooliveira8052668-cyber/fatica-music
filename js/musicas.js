@@ -12,6 +12,8 @@ window.FATICA_DADOS = {
     qrCode: '', // Caminho de imagem de QR Code oficial, se autorizado.
     // Retratos distintos na galeria; alguns também ilustram cards, sem vínculo oficial confirmado.
     fotos: [
+      // Nova fotografia enviada pela família em 18/11/2026; manter o nome real do arquivo no GitHub.
+      { src: 'fafa-silva.jpg.png', alt: 'Fafa Silva sorrindo, com cabelos longos e blusa preta', legenda: 'Fafa Silva' },
       { src: 'assets/imagens/retrato-artista.jpeg', alt: 'Retrato da artista sorrindo, com blusa lilás', legenda: 'Retrato da artista' },
       { src: 'assets/imagens/retrato-chapeu.jpeg', alt: 'Retrato da artista com chapéu em cenário sertanejo', legenda: 'Em clima sertanejo' },
       { src: 'assets/imagens/retrato-por-do-sol.jpeg', alt: 'Retrato da artista ao pôr do sol, ao lado de um violão', legenda: 'Ao pôr do sol' },
