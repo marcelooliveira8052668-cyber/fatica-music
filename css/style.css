@@ -192,3 +192,6 @@ body{font-size:18px}
 /* Elementos sem contato ou Pix configurado ficam ocultos até ativação. */
 .pix-acoes[hidden],.qr-placeholder[hidden],.botao-texto[hidden]{display:none!important}
 .letras-aviso{padding:24px 10px;color:var(--muted);font-size:1rem}
+
+/* Fotografia da Fafa no lugar do símbolo, mantendo o nome da marca. */
+.marca-logotipo.marca-retrato{border-radius:50%;object-fit:cover;object-position:center 27%;border:2px solid #c78cff;box-shadow:0 0 0 3px #a455ff25;filter:none}
